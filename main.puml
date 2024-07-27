@@ -11,7 +11,7 @@ rectangle jednostki {
 }
 rectangle dowodzcy as "dowódzcy" {
   rectangle Nazgule as "Nazgûle"
-  rectangle dowodzcyWolnychLudow as "Dowódzcy\nWolnych\nLudów"
+  rectangle dowodzcyWolnychLudow as "dowódzcy\nWolnych\nLudów"
 }
 rectangle druzyna as "Drużyna\nPierścienia"
 rectangle armia
@@ -20,7 +20,7 @@ rectangle narod as "naród" {
   note bottom of region: **wolny** dla gracza\ngdy brak wrogich\narmii i osad\n(poza obleganą\ntwierdzą)
 }
 
-towarzysze ..> dowodzcy #BlueViolet: po opuszczeniu\nDrużyny Pierścienia
+towarzysze ..> dowodzcyWolnychLudow #BlueViolet: po opuszczeniu\nDrużyny Pierścienia
 towarzysze ...> druzyna #BlueViolet: są częścią\ndrużyny dopóki\njej nie opuszczą;\njeden przewodzi
 Gollum ....> druzyna: podąża za drużyna;\nprzewodzi, gdy\nbraknie towarzyszy
 powiernicy ---> druzyna
