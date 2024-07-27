@@ -20,14 +20,14 @@ rectangle narod as "naród" {
   note bottom of region: **wolny** dla gracza\ngdy brak wrogich\narmii i osad\n(poza obleganą\ntwierdzą)
 }
 
-towarzysze ..> dowodzcyWolnychLudow #BlueViolet: po opuszczeniu\nDrużyny Pierścienia
-towarzysze ...> druzyna #BlueViolet: są częścią\ndrużyny dopóki\njej nie opuszczą;\njeden przewodzi
-Gollum ....> druzyna: podąża za drużyna;\nprzewodzi, gdy\nbraknie towarzyszy
-powiernicy ---> druzyna
-slugi ----> region
+towarzysze ...> region: po <font color="BlueViolet">opuszczeniu\nDrużyny Pierścienia;\nmoże poruszać się\nsamodzielnie lub z armią
+towarzysze ..> druzyna: są częścią\ndrużyny dopóki\njej nie <font color="BlueViolet">opuszczą;\njeden przewodzi
+Gollum ..> druzyna: podąża za drużyna;\nprzewodzi, gdy\n<font color="BlueViolet">braknie towarzyszy
+powiernicy --> druzyna
+slugi ---> region
 
-Nazgule ---> region: bez przyjaznej armii\nnie wchodzą do\nwrogiej twierdzy
-dowodzcyWolnychLudow ---> region: bez\nprzyjaznej\narmii\nginą
+Nazgule ---> region: może poruszać się\nsamodzielnie lub z armią;\nbez przyjaznej armii\nnie wchodzi do\nwrogiej twierdzy
+dowodzcyWolnychLudow ---> region: bez\nprzyjaznej\narmii\nginie
 jednostki --> armia: "max 10 /\nmax 5 (w oblężonej twierdzy)"
 
 armia --> region
@@ -40,7 +40,7 @@ rectangle osada {
 }
 rectangle fortyfikacja
 
-region <-- osada
-region <-- fortyfikacja
+region <--- osada
+region <--- fortyfikacja
 
 @enduml
