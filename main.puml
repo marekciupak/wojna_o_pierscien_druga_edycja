@@ -3,7 +3,11 @@ rectangle postacie {
   rectangle towarzysze
   rectangle powiernicy as "powiernicy\npierścienia"
   rectangle Gollum
-  rectangle slugi as "sługi"
+  rectangle slugi as "sługi" {
+    rectangle Saruman
+    rectangle rzecznikSaurona as "Rzecznik Saurona"
+    rectangle czarnoksieznik as "Czarnoksiężnik\nz Angmaru"
+  }
 }
 rectangle jednostki {
   rectangle regularne
@@ -20,13 +24,16 @@ rectangle narod as "naród" {
   note bottom of region: **wolny** dla gracza\ngdy brak wrogich\narmii i osad\n(poza obleganą\ntwierdzą)
 }
 
-towarzysze ...> region: po <font color="BlueViolet">opuszczeniu\nDrużyny Pierścienia;\nmoże poruszać się\nsamodzielnie lub z armią
+czarnoksieznik -> Nazgule
+
+towarzysze ...> region: po <font color="BlueViolet">opuszczeniu\nDrużyny Pierścienia;\n* może poruszać się\nsamodzielnie lub z armią\n* musi się zatrzymać w\nregionie z twierdzą Cienia\n* nie może przybyć/opuścić\nregionu z przyjazną\n oblężoną twierdzą
 towarzysze ..> druzyna: są częścią\ndrużyny dopóki\njej nie <font color="BlueViolet">opuszczą;\njeden przewodzi
 Gollum ..> druzyna: podąża za drużyna;\nprzewodzi, gdy\n<font color="BlueViolet">braknie towarzyszy
 powiernicy --> druzyna
-slugi ---> region
+rzecznikSaurona ---> region: \n* może poruszać się\nsamodzielnie lub z armią\n* bez armii nie może przybyć\ndo regionu z wrogą\nnieoblężoną twierdzą\n* nie może przybyć/opuścić\nregionu z przyjazną\n oblężoną twierdzą
+Saruman ---> region: nie może\nopuścić\nOrthanku
 
-Nazgule ---> region: może poruszać się\nsamodzielnie lub z armią;\nbez przyjaznej armii\nnie wchodzi do\nwrogiej twierdzy
+Nazgule ---> region: \n* może poruszać się\nsamodzielnie lub z armią\n* bez armii nie może przybyć\ndo regionu z wrogą\nnieoblężoną twierdzą
 dowodzcyWolnychLudow ---> region: bez\nprzyjaznej\narmii\nginie
 jednostki --> armia: "max 10 /\nmax 5 (w oblężonej twierdzy)"
 
