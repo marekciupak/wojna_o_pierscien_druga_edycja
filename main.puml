@@ -19,6 +19,7 @@ rectangle dowodzcy as "dowódzcy" {
 }
 rectangle druzyna as "Drużyna\nPierścienia"
 rectangle armia
+note right of armia: przyjaźni dowódzcy i postacie\nw regionie z jednostkami\nwchodzą w skład armii
 rectangle narod as "naród" {
   rectangle region
   note bottom of region: **wolny** dla gracza\ngdy brak wrogich\narmii i osad\n(poza obleganą\ntwierdzą)
@@ -47,7 +48,7 @@ rectangle osada {
 }
 rectangle fortyfikacja
 
-region <--- osada
+region <--- osada: umożliwia rekrutację\n(poza oblężoną twierdzą,\nchyba że rekrutujemy\nkartą wydarzenia)
 region <--- fortyfikacja
 
 @enduml
