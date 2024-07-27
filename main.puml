@@ -26,14 +26,14 @@ rectangle narod as "naród" {
 
 czarnoksieznik -> Nazgule
 
-towarzysze ...> region: po <font color="BlueViolet">opuszczeniu\nDrużyny Pierścienia;\n* może poruszać się\nsamodzielnie lub z armią\n* musi się zatrzymać w\nregionie z twierdzą Cienia\n* nie może przybyć/opuścić\nregionu z przyjazną\n oblężoną twierdzą
+towarzysze ...> region: po <font color="BlueViolet">opuszczeniu\nDrużyny Pierścienia;\n* może poruszać się\nsamodzielnie lub z armią\n* <font color="DarkOrange">musi się zatrzymać w\n<font color="DarkOrange">regionie z twierdzą Cienia\n* <font color="IndianRed">nie może przybyć/opuścić\n<font color="IndianRed">regionu z przyjazną\n<font color="IndianRed">oblężoną twierdzą
 towarzysze ..> druzyna: są częścią\ndrużyny dopóki\njej nie <font color="BlueViolet">opuszczą;\njeden przewodzi
 Gollum ..> druzyna: podąża za drużyna;\nprzewodzi, gdy\n<font color="BlueViolet">braknie towarzyszy
 powiernicy --> druzyna
-rzecznikSaurona ---> region: \n* może poruszać się\nsamodzielnie lub z armią\n* bez armii nie może przybyć\ndo regionu z wrogą\nnieoblężoną twierdzą\n* nie może przybyć/opuścić\nregionu z przyjazną\n oblężoną twierdzą
+rzecznikSaurona ---> region: \n* może poruszać się\nsamodzielnie lub z armią\n* <font color="Red">bez armii nie może przybyć\n<font color="Red">do regionu z wrogą\n<font color="Red">nieoblężoną twierdzą\n* <font color="IndianRed">nie może przybyć/opuścić\n<font color="IndianRed">regionu z przyjazną\n<font color="IndianRed">oblężoną twierdzą
 Saruman ---> region: nie może\nopuścić\nOrthanku
 
-Nazgule ---> region: \n* może poruszać się\nsamodzielnie lub z armią\n* bez armii nie może przybyć\ndo regionu z wrogą\nnieoblężoną twierdzą
+Nazgule ---> region: \n* może poruszać się\nsamodzielnie lub z armią\n* <font color="Red">bez armii nie może przybyć\n<font color="Red">do regionu z wrogą\n<font color="Red">nieoblężoną twierdzą
 dowodzcyWolnychLudow ---> region: bez\nprzyjaznej\narmii\nginie
 jednostki --> armia: "max 10 /\nmax 5 (w oblężonej twierdzy)"
 
