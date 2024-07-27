@@ -1,0 +1,46 @@
+@startuml
+rectangle postacie {
+  rectangle towarzysze
+  rectangle powiernicy as "powiernicy\npierścienia"
+  rectangle Gollum
+  rectangle slugi as "sługi"
+}
+rectangle jednostki {
+  rectangle regularne
+  rectangle elitarne
+}
+rectangle dowodzcy as "dowódzcy" {
+  rectangle Nazgule as "Nazgûle"
+  rectangle dowodzcyWolnychLudow as "Dowódzcy\nWolnych\nLudów"
+}
+rectangle druzyna as "Drużyna\nPierścienia"
+rectangle armia
+rectangle narod as "naród" {
+  rectangle region
+  note bottom of region: **wolny** dla gracza\ngdy brak wrogich\narmii i osad\n(poza obleganą\ntwierdzą)
+}
+
+towarzysze ..> dowodzcy #BlueViolet: po opuszczeniu\nDrużyny Pierścienia
+towarzysze ...> druzyna #BlueViolet: są częścią\ndrużyny dopóki\njej nie opuszczą;\njeden przewodzi
+Gollum ....> druzyna: podąża za drużyna;\nprzewodzi, gdy\nbraknie towarzyszy
+powiernicy ---> druzyna
+slugi ----> region
+
+Nazgule ---> region: bez przyjaznej armii\nnie wchodzą do\nwrogiej twierdzy
+dowodzcyWolnychLudow ---> region: bez\nprzyjaznej\narmii\nginą
+jednostki --> armia: "max 10 /\nmax 5 (w oblężonej twierdzy)"
+
+armia --> region
+druzyna --> region
+
+rectangle osada {
+  rectangle wioska
+  rectangle miasto
+  rectangle twierdza
+}
+rectangle fortyfikacja
+
+region <-- osada
+region <-- fortyfikacja
+
+@enduml
