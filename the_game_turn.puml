@@ -1,0 +1,18 @@
+@startuml Przebieg rozgrywki
+
+start
+repeat
+:odzyskanie i otrzymanie/utrata kości akcji;
+:dobranie 2 kart wydarzeń;
+#SkyBlue :Wolne Ludy mogą ujawnić Drużynę Pierścienia;
+#SkyBlue :Wolne Ludy mogą zmienić przewodnika Drużyny Pierścienia;
+#OrangeRed :Cień przydziela kości akcji do poszukiwań\n* min. 1, jeśli Wolne Ludy odzyskały kość z pola poszukiwań\n* max. tyle ile zostało Towarzyszy w Drużynie Pierścienia (ale min. 1);
+:Rzuty kośćmi akcji;
+#OrangeRed :Cień kładzie "Oka" na polu poszukiwań;
+repeat
+  #SkyBlue :Wolne Ludy wykonują **akcję**\n* mogą spasować, jeśli mają mniej niewykorzystanych kości akcji niż przeciwnik\n* mogą pominąć akcję (odrzucić kość akcji);
+  #OrangeRed :Cień wykonuje **akcję**\n* może spasować, jeśli ma mniej niewykorzystanych kości akcji niż przeciwnik\n* może pominąć akcję (odrzucić kość akcji);
+repeat while (wszystkie kości akcji zużyte?) is (nie)
+repeat while (ktoś wygrał wojskowo?) is (nie)
+stop
+@enduml
